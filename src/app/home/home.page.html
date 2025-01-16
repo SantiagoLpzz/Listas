@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-input [(ngModel)]="fecha.value" label="fecha" type="datetime-local"></ion-input>
+  <ion-input [(ngModel)]="nombre.value" label="nombre" type="nombre-local"></ion-input>
+  <button (click)="createTask()">Registrar en la lista</button>
+  <br>
+  <div *ngFor="let tarea of tasks">
+    <h2>{{tarea.nombre}}</h2>
+    <h2>{{tarea.fecha}}</h2>
+    <ion-checkbox >completada</ion-checkbox>
+  </div>
+</ion-content>
